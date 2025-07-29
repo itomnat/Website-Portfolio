@@ -393,3 +393,36 @@ html {
 .zoomed-img:hover {
   transform: scale(1.2);
 }
+
+
+/* Header Text Color */
+.header-text {
+  color: #c0c0c0;
+}
+
+/* Tool Section Titles */
+.tool-title {
+  color: #c0c0c0;
+}
+
+/* Invert icon (for Express) */
+.invert-icon {
+  filter: invert(1);
+}
+
+/* Google Maps styling */
+.map-container iframe {
+  border: 0;
+  border-radius: 8px;
+}
+
+/* Hidden utility class */
+.hidden {
+  display: none;
+}
+
+.map-frame {
+  border: 0;
+  border-radius: 8px;
+}
+
