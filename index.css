@@ -8,6 +8,11 @@
     box-sizing: border-box;
 }
 
+/* Landing section styling */
+.landing-section {
+  height: 40vh;
+}
+
 body {
     font-family: 'Space Grotesk', sans-serif;
     background: linear-gradient(135deg, #2c2c2c 0%, #4a4a4a 25%, #6c6c6c 50%, #4a4a4a 75%, #2c2c2c 100%);
@@ -35,9 +40,12 @@ body::before {
 
 /* Profile Image */
 .profile-img {
-    width: 150px;
-    height: 150px;
-    object-fit: cover;
+  width: 250px;
+  height: 250px;
+  object-fit: cover;
+  margin-top: -100px; /* Move image up */
+  z-index: 1;
+  position: relative;
 }
 
 /* Bio Card */
