@@ -10,7 +10,10 @@
 
 /* Landing section styling */
 .landing-section {
-  height: 40vh;
+  min-height: 60vh;
+  padding: 80px 0 40px 0;
+  position: relative;
+  overflow: hidden;
 }
 
 body {
@@ -40,12 +43,14 @@ body::before {
 
 /* Profile Image */
 .profile-img {
-  width: 250px;
-  height: 250px;
+  width: 200px;
+  height: 200px;
   object-fit: cover;
-  margin-top: -100px; /* Move image up */
+  margin-top: 20px;
   z-index: 1;
   position: relative;
+  border: 4px solid #4a4a4a;
+  box-shadow: 0 8px 25px rgba(0, 0, 0, 0.3);
 }
 
 /* Bio Card */
@@ -56,59 +61,106 @@ body::before {
     color: #ffffff;
 }
 
-/* Project Images */
+/* Enhanced Project Cards */
 .project-img {
     width: 100%;
-    height: 200px;
+    height: 220px;
     object-fit: cover;
     border-radius: 8px;
+    transition: transform 0.3s ease;
 }
 
-/* Cards */
+.project-img:hover {
+    transform: scale(1.05);
+}
+
 .card {
     background-color: #2d2d2d;
     border: none;
     color: #ffffff;
-    transition: transform 0.3s ease, box-shadow 0.3s ease;
+    transition: all 0.3s ease;
+    border-radius: 12px;
+    overflow: hidden;
 }
 
 .card:hover {
-    transform: translateY(-5px);
+    transform: translateY(-8px);
+    box-shadow: 0 15px 35px rgba(0, 0, 0, 0.4);
 }
 
-.hover-shadow:hover {
-    box-shadow: 0 10px 25px rgba(0, 0, 0, 0.3);
+.card-body {
+    padding: 1.5rem;
 }
 
-/* Tool Icons */
+.card-title {
+    color: #ffffff;
+    font-weight: 600;
+    margin-bottom: 1rem;
+}
+
+.card-text {
+    color: #c0c0c0;
+    line-height: 1.6;
+}
+
+/* Enhanced Tool Cards */
 .tool-icon {
-    width: 60px;
-    height: 60px;
+    width: 65px;
+    height: 65px;
     object-fit: contain;
+    transition: transform 0.3s ease;
+}
+
+.tool-icon:hover {
+    transform: scale(1.1);
 }
 
 .tool-icon-container {
     display: flex;
     flex-direction: column;
     align-items: center;
-    padding: 15px;
+    padding: 20px;
+    transition: all 0.3s ease;
+}
+
+.tool-icon-container:hover {
+    background-color: rgba(74, 74, 74, 0.3);
+    border-radius: 8px;
 }
 
 .tool-name {
     font-size: 0.9rem;
     margin: 0;
     color: #ffffff;
+    font-weight: 500;
 }
 
-/* Navigation */
+/* Enhanced Navigation */
+.navbar {
+    background-color: rgba(45, 45, 45, 0.95) !important;
+    backdrop-filter: blur(10px);
+    transition: all 0.3s ease;
+}
+
+.navbar-brand {
+    font-weight: 600;
+    font-size: 1.3rem;
+}
+
 .navbar-nav .nav-link {
     color: #ffffff !important;
-    transition: color 0.3s ease;
+    transition: all 0.3s ease;
+    font-weight: 500;
+    padding: 0.5rem 1rem !important;
+    border-radius: 6px;
+    margin: 0 0.2rem;
 }
 
 .navbar-nav .nav-link:hover,
 .navbar-nav .nav-link.active {
     color: #c0c0c0 !important;
+    background-color: rgba(74, 74, 74, 0.3);
+    transform: translateY(-1px);
 }
 
 /* Contact Section */
@@ -299,9 +351,104 @@ body::before {
     color: #721c24;
 }
 
+/* Landing Section Enhancements */
+.landing-section .container {
+  position: relative;
+  z-index: 2;
+  animation: fadeInUp 1s ease-out;
+}
+
+.landing-section h1 {
+  font-size: 3.5rem;
+  font-weight: 700;
+  margin-bottom: 1rem;
+  text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.3);
+  animation: fadeInUp 1s ease-out 0.2s both;
+}
+
+.landing-section .lead {
+  font-size: 1.3rem;
+  margin-bottom: 2rem;
+  opacity: 0.9;
+  animation: fadeInUp 1s ease-out 0.4s both;
+}
+
+.landing-section .btn {
+  font-size: 1.1rem;
+  padding: 12px 30px;
+  border-radius: 50px;
+  font-weight: 600;
+  transition: all 0.3s ease;
+  box-shadow: 0 4px 15px rgba(0, 0, 0, 0.2);
+  animation: fadeInUp 1s ease-out 0.6s both;
+}
+
+.landing-section .btn:hover {
+  transform: translateY(-2px);
+  box-shadow: 0 6px 20px rgba(0, 0, 0, 0.3);
+}
+
+/* Animation Keyframes */
+@keyframes fadeInUp {
+  from {
+    opacity: 0;
+    transform: translateY(30px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+/* Profile Section Enhancements */
+.profile-section {
+  padding: 40px 0;
+  margin-top: 0;
+}
+
 /* Responsive Design */
+@media (max-width: 992px) {
+  .landing-section {
+    min-height: 50vh;
+    padding: 60px 0 30px 0;
+  }
+  
+  .landing-section h1 {
+    font-size: 2.8rem;
+  }
+  
+  .landing-section .lead {
+    font-size: 1.2rem;
+  }
+  
+  .profile-img {
+    width: 180px;
+    height: 180px;
+    margin-top: 15px;
+  }
+}
+
 @media (max-width: 768px) {
-    .contact-title {
+  .landing-section {
+    min-height: 45vh;
+    padding: 50px 0 20px 0;
+  }
+  
+  .landing-section h1 {
+    font-size: 2.2rem;
+  }
+  
+  .landing-section .lead {
+    font-size: 1.1rem;
+  }
+  
+  .profile-img {
+    width: 160px;
+    height: 160px;
+    margin-top: 10px;
+  }
+  
+  .contact-title {
         font-size: 2rem;
     }
     
@@ -337,7 +484,26 @@ body::before {
 }
 
 @media (max-width: 576px) {
-    .contact-navbar .nav-link {
+  .landing-section {
+    min-height: 40vh;
+    padding: 40px 0 15px 0;
+  }
+  
+  .landing-section h1 {
+    font-size: 1.8rem;
+  }
+  
+  .landing-section .lead {
+    font-size: 1rem;
+  }
+  
+  .profile-img {
+    width: 140px;
+    height: 140px;
+    margin-top: 5px;
+  }
+  
+  .contact-navbar .nav-link {
         padding: 8px 15px;
         font-size: 0.9rem;
     }
@@ -394,12 +560,42 @@ html {
     }
 }
 
+/* Enhanced Profile Image */
 .zoomed-img {
-  transition: transform 0.3s ease;
+  transition: all 0.3s ease;
 }
 
 .zoomed-img:hover {
-  transform: scale(1.2);
+  transform: scale(1.05);
+  box-shadow: 0 12px 30px rgba(0, 0, 0, 0.4);
+}
+
+/* Hover Shadow Enhancement */
+.hover-shadow:hover {
+    box-shadow: 0 15px 35px rgba(0, 0, 0, 0.4);
+}
+
+/* Section Spacing */
+section {
+    padding: 60px 0;
+}
+
+section h2 {
+    font-weight: 700;
+    margin-bottom: 3rem;
+    position: relative;
+}
+
+section h2::after {
+    content: '';
+    position: absolute;
+    bottom: -10px;
+    left: 50%;
+    transform: translateX(-50%);
+    width: 60px;
+    height: 3px;
+    background: linear-gradient(90deg, #4a4a4a, #6c6c6c, #4a4a4a);
+    border-radius: 2px;
 }
 
 
